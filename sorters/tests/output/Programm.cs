@@ -1,8 +1,10 @@
 ﻿using ru.topacademy.sorters.bubble_sort;
+using ru.topacademy.sorters.from_max.merge_sort;
+using ru.topacademy.sorters.from_max.quick_sort;
+using ru.topacademy.sorters.from_max.selection_sort;
 using ru.topacademy.sorters.heap_sort;
 using ru.topacademy.sorters.insertion_sort;
 using ru.topacademy.sorters.shell_sort;
-using System.Numerics;
 
 namespace sorters.tests.output
 {
@@ -37,6 +39,46 @@ namespace sorters.tests.output
             int[] sortedArray2 = ShellSort.Shell_Sort([64, 14, 15, 12, 22, 11, 90]);
 
             foreach (int i in sortedArray2) { Console.Write($"{i} "); }
+
+            Console.WriteLine("\n\nSorters from Max\nQuick Sort:\n");
+
+            List<int> data = new List<int> { 10, 7, 8, 9, 1, 5 };
+
+
+            List<int> sorted = QuickSort.Quick_Sort(data);
+
+
+            Console.WriteLine("Отсортированный массив: ");
+            foreach (int x in sorted)
+            {
+                Console.Write(x + " ");
+            }
+            Console.WriteLine();
+
+
+            List<int> dataMerge = new List<int> { 64, 34, 25, 12, 22, 11, 90 };
+
+            List<int> sortedMerge = MergeSort.mergeSort(dataMerge);
+
+
+            Console.WriteLine("Отсортированный массив Merge: ");
+            foreach (int x in sortedMerge)
+            {
+                Console.Write(x + " ");
+            }
+            Console.WriteLine();
+
+            List<int> dataSelection = new List<int> { 64, 34, 25, 12, 22, 11, 90 };
+
+            List<int> sortedSelection = SelectionSort.Selection_Sort(dataSelection);
+
+
+            Console.WriteLine("Отсортированный массив Selection: ");
+            foreach (int x in sortedSelection)
+            {
+                Console.Write(x + " ");
+            }
+            Console.WriteLine();
         }
     }
 }
