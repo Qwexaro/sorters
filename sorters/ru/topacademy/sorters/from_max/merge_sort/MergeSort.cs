@@ -8,14 +8,14 @@
             if (list.Count <= 1) return list;
 
             // Делим массив пополам
-            int mid = Convert.ToInt32(Math.Floor((double)list.Count / 2));
+            int mid = list.Count / 2;
             var left = list.GetRange(0, mid);
             var right = list.GetRange(mid, list.Count - mid);
 
             // Рекурсивно сортируем обе половины
             return merge(mergeSort(left), mergeSort(right));
         }
-
+        
         public static List<int> merge(List<int> left, List<int> right)
         {
             List<int> result = new();
