@@ -42,6 +42,5 @@
 
             return result;
         }
-
     }
 }
